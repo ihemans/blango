@@ -36,10 +36,13 @@ class Dev(Configuration):
     CRISPY_TEMPLATE_PACK = "bootstrap5"
 
     AUTH_USER_MODEL = "blango_auth.User"
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
 
     # Application definition
 
     INSTALLED_APPS = [
+        'blango_auth',
         'django.contrib.admin',
         'django.contrib.auth',
         'django.contrib.contenttypes',
@@ -48,7 +51,6 @@ class Dev(Configuration):
         'django.contrib.staticfiles',
         'crispy_forms',
         'crispy_bootstrap5',
-        'blango_auth',
         'blog',
     ]
 
