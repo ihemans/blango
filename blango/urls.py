@@ -27,7 +27,7 @@ urlpatterns = [
   path("accounts/profile/", blango_auth.views.profile, name="profile"),
   path("post/<slug>/", blog.views.post_detail, name="blog-post-detail"),
   path('admin/', admin.site.urls),
-  path("api/v1/", include("blog.api_urls")),
+  path("api/v1/", include("blog.api.urls")),
   path(
     "accounts/register/",
     RegistrationView.as_view(form_class=BlangoRegistrationForm),
