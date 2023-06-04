@@ -44,6 +44,14 @@ class Dev(Configuration):
     ACCOUNT_USERNAME_REQUIRED = False
     ACCOUNT_AUTHENTICATION_METHOD = "email"
 
+    REST_FRAMEWORK = {
+      "DEFAULT_AUTHENTICATION_CLASSES": [
+          "rest_framework.authentication.BasicAuthentication",
+          "rest_framework.authentication.SessionAuthentication",
+          "rest_framework.authentication.TokenAuthentication",
+      ]
+    }
+
     # Application definition
 
     INSTALLED_APPS = [
@@ -56,6 +64,7 @@ class Dev(Configuration):
         'django.contrib.sites',
         'django.contrib.staticfiles',
         'rest_framework',
+        'rest_framework.authtoken',
         'crispy_forms',
         'crispy_bootstrap5',
         'blog',
