@@ -1,3 +1,4 @@
+from blog.api.filters import PostFilterSet
 from rest_framework import generics
 from blog.api.permissions import AuthorModifyOrReadOnly, IsAdminUserForObject
 
