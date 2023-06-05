@@ -3,6 +3,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework.authtoken import views
 
 from blog.api.views import PostList, PostDetail, UserDetail
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     path("posts/", PostList.as_view(), name="api_post_list"),
