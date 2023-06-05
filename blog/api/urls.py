@@ -10,6 +10,8 @@ urlpatterns = [
     path("users/<str:email>", UserDetail.as_view(), name="api_user_detail"),
     path("auth/", include("rest_framework.urls")),
     path("token-auth/", views.obtain_auth_token),
+    path("jwt/", TokenObtainPairView.as_view(), name="jwt_obtain_pair"),
+    path("jwt/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
