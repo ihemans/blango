@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
   path("", blog.views.index),
+  path("post-table/", blog.views.post_table, name="blog-post-table"),
   path("accounts/", include("django.contrib.auth.urls")),
   path("accounts/", include("allauth.urls")),
   path("accounts/profile/", blango_auth.views.profile, name="profile"),
